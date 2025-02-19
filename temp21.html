@@ -1,4 +1,99 @@
- <hr>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Facebook page</title>
+    <style>
+        body{
+            background-color: #eeeeee; 
+        }
+        .container{
+            background-color: white;
+            /* text-align: center; */
+            border-radius: 20px;
+            padding: 10px;
+            width: 400px;
+            margin:auto;
+
+        }
+        .row{
+            display: flex;
+            justify-content: center;        }
+        .title
+        {
+            font-size: 25px;
+            margin-top: 30px;
+            font-weight: bold;
+        font-family: Arial, Helvetica, sans-serif;
+
+        }
+        .header
+        {
+            font-size: 50px;
+            color: #1877F2;;
+            font-weight: bold;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        .caption
+        {
+            font-size: 20px;
+            color: gray;
+            /* font-family: Arial; */
+            text-align:center;
+        }
+        input,select{
+            width: 100%;
+            margin: 5px;
+            border-radius: 5px;
+            padding: 5px;
+            border: 1px solid grey;
+        }
+        button{
+            color: white;
+            background-color: green;
+            font-size: 20px;
+            padding: 10px;
+            border-radius: 20px;
+        }
+        .leftCaption
+        {
+            color:grey;
+            margin-left: 5px;
+            font-size: 10px;
+        }
+        .qMark {
+        background-color: grey;
+        border-radius: 5px;
+        color: white;
+        padding-left: 5px;
+        padding-right: 5px;
+        margin: 2px;
+      }
+      .radioClass {
+        border: 1px solid gray;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin: 5px;
+        border-radius: 5px;
+        padding: 3px;
+      }
+    </style>
+      
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="header">facebook</div>
+      </div>
+      <div class="row">
+        <div>
+          <div class="title">Create a new account</div>
+          <div class="caption">It's quick and easy.</div>
+        </div>
+      </div>
+      <hr>
     <div id="root"></div>
     </div>
     <script>
@@ -18,7 +113,7 @@
       
       <div class="row">
         <input type="text" id="firstname" placeholder="Firstname" />
-        <input type="text" id="surname" placeholder="Surname" />
+        <input type="text" id="lastname" placeholder="Lastname" />
       </div>
       <div class="row" style="justify-content: start">
         <div class="leftCaption">
@@ -64,7 +159,7 @@
      </div>
 
       <div class="row">
-        <input type="text" placeholder="Mobule number or email address" />
+        <input type="text" placeholder="Phone number or email address" />
       </div>
       <div class="row">
         <input type="password" placeholder="New password" />
