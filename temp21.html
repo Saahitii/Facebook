@@ -1,101 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Facebook page</title>
-    <style>
-        body{
-            background-color: #eeeeee; 
-        }
-        .container{
-            background-color: white;
-            /* text-align: center; */
-            border-radius: 20px;
-            padding: 10px;
-            width: 400px;
-            margin:auto;
-
-        }
-        .row{
-            display: flex;
-            justify-content: center;        }
-        .title
-        {
-            font-size: 25px;
-            margin-top: 30px;
-            font-weight: bold;
-        font-family: Arial, Helvetica, sans-serif;
-
-        }
-        .header
-        {
-            font-size: 50px;
-            color: #1877F2;;
-            font-weight: bold;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-        }
-        .caption
-        {
-            font-size: 20px;
-            color: gray;
-            /* font-family: Arial; */
-            text-align:center;
-        }
-        input,select{
-            width: 100%;
-            margin: 5px;
-            border-radius: 5px;
-            padding: 5px;
-            border: 1px solid grey;
-        }
-        button{
-            color: white;
-            background-color: green;
-            font-size: 20px;
-            padding: 10px;
-            border-radius: 20px;
-        }
-        .leftCaption
-        {
-            color:grey;
-            margin-left: 5px;
-            font-size: 10px;
-        }
-        .qMark {
-        background-color: grey;
-        border-radius: 5px;
-        color: white;
-        padding-left: 5px;
-        padding-right: 5px;
-        margin: 2px;
-      }
-      .radioClass {
-        border: 1px solid gray;
-        display: flex;
-        justify-content: space-between;
-        width: 100%;
-        margin: 5px;
-        border-radius: 5px;
-        padding: 3px;
-      }
-    </style>
-      
-  </head>
-  <body>
-    <div class="container">
-      <div class="row">
-        <div class="header">facebook</div>
-      </div>
-      <div class="row">
+ <hr>
+    <div id="root"></div>
+    </div>
+    <script>
+      const showData = () => {
+        let firstname = document.getElementById("firstname").value;
+        let surname = document.getElementById("surname").value;
+        let str = `
         <div>
-          <div class="title">Create a new account</div>
-          <div class="caption">It's quick and easy.</div>
+          Name:${firstname} ${surname}
         </div>
-      </div>
+        `;
+        root.innerHTML = str;
+      };
+
+      const showForm = () => {
+        let str = `
+      
       <div class="row">
-        <input type="text" placeholder="Firstname" />
-        <input type="text" placeholder="Last name" />
+        <input type="text" id="firstname" placeholder="Firstname" />
+        <input type="text" id="surname" placeholder="Surname" />
       </div>
       <div class="row" style="justify-content: start">
         <div class="leftCaption">
@@ -119,47 +42,65 @@
       <div class="row">
         <div class="radioClass">
           <div><label> Female</label></div>
-          <div><input type="radio" name="gender" /></div>
+          <div><input type="radio" name="gender" onclick="togglePronoun()" /></div>
         </div>
         <div class="radioClass">
           <div><label> Male</label></div>
-          <div><input type="radio" name="gender" /></div>
+          <div><input type="radio" name="gender" onclick="togglePronoun()" /></div>
         </div>
         <div class="radioClass">
           <div><label> Custom</label></div>
-          <div><input type="radio" name="gender" /></div>
+          <div><input type="radio" name="gender" onclick="togglePronoun()" /></div>
         </div>
       </div>
+
+     <div class="row">
+      <select id="prSelect" style="display:none">
+        <option>Select your pronoun</option>
+        <option>She:"Wish her a happy birthday"</option>
+        <option>He:"Wish him a happy birthday"</option>
+        <option>They:"Wish them a happy birthday"</option>
+      </select>
+     </div>
+
       <div class="row">
-        <input type="text" placeholder="Phone number or email address" />
+        <input type="text" placeholder="Mobule number or email address" />
       </div>
       <div class="row">
         <input type="password" placeholder="New password" />
       </div>
       <div class="row">
-        <button>Sign Up</button>
+        <button onclick='showData()'>Sign Up</button>
       </div>
-    </div>
-      <script>
-        let str= " "
-        for(let i=1;i<=31;i++)
-        {
-        str+= `<option>${i}</option>`;
+      `;
+        root.innerHTML = str;
+      };
+
+      showForm();
+      let str = "";
+      for (let i = 1; i <= 31; i++) {
+        str += `<option>${i}</option>`;
+      }
+      day.innerHTML = str;
+      str = "";
+      for (let i = 1; i <= 12; i++) {
+        str += `<option>${i}</option>`;
+      }
+      month.innerHTML = str;
+      str = "";
+      for (let i = 1905; i <= 2025; i++) {
+        str += `<option>${i}</option>`;
+      }
+      year.innerHTML = str;
+
+      const togglePronoun = () => {
+        let p = document.getElementsByName("gender");
+        if (p[2].checked) {
+          prSelect.style.display = "block";
+        } else {
+          prSelect.style.display = "none";
         }
-        day.innerHTML=str;
-         str= " "
-        for(let i=1;i<=12;i++)
-        {
-        str+= `<option>${i}</option>`;
-        }
-        month.innerHTML=str;
-        str= " "
-        for(let i=1905;i<=2025;i++)
-        {
-        str+= `<option>${i}</option>`;
-        }
-        year.innerHTML=str;
+      };
     </script>
-    </body>
-  </html>
-  
+  </body>
+</html>
