@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <img src="assets/ball.png" width="200px" id="ball" />
+    <script>
+        ball.style.position="absolute";
+        let t=0;
+        function ballFall()
+        {
+            t++;
+            if(t>400) t=1;
+            ball.style.top= t+"px";
+            setTimeout(ballFall, 10);
+
+        }
+        ballFall()
+        </script>
+        </body>
+        </html>
